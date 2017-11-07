@@ -1,12 +1,23 @@
 <?php
     function CounsellorCreate() {
 
-        $sqlCounsellorCreate = "CREATE TABLE Counsellor (
-            CounsellorID INT PRIMARY KEY,
+        /*$sqlCounsellorCreate = "CREATE TABLE Counsellor (
+            CounsellorID INT,
             FirstName VARCHAR(20) NOT NULL,
             LastName VARCHAR(20),
             Location VARCHAR(20),
-            Phone VARCHAR(10)
+            Phone VARCHAR(10),
+            StudentID REFERENCES Student(StudentID) ON DELETE CASCADE,
+            PRIMARY KEY(CounsellorID, StudentID)
+            )";*/
+        
+        $sqlCounsellorCreate = "CREATE TABLE Counsellor (
+            CounsellorID INT,
+            FirstName VARCHAR(20) NOT NULL,
+            LastName VARCHAR(20),
+            Location VARCHAR(20),
+            Phone VARCHAR(10),
+            PRIMARY KEY(CounsellorID)
             )";
 
         if ($conn->query($sqlCounsellorCreate) === TRUE) {
