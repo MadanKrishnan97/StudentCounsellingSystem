@@ -82,15 +82,30 @@ span.psw {
 
   <div class="container">
     <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input id="numb" type="text" placeholder="Enter Username" name="uname" required>
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
+    <input id="sane" type="password" placeholder="Enter Password" name="psw" required>
+	<button type="submit" id="insane" onclick="myFunction()">login</button>
     <input type="checkbox" checked="checked"> Remember me
   </div>
-
+  <div>
+	<script>
+	function myFunction()
+	{
+		var x=document.getElementById("numb").value;
+		var y=document.getElementById("sane").value;
+		if(x===rnsit && y===student)
+		{
+			<a href="page.html" >Login</a>
+		}
+		else
+		{
+			text="Invalid Credentials";
+	}
+		document.write(text);
+	</script>
+  </div>
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
