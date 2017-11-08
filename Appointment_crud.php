@@ -4,9 +4,8 @@
         $sqlAppointmentCreate = "CREATE TABLE Appointment (
             AppointmentID INT,
             AppointmentDate DATE,
-            StudentID REFERENCES Student(StudentID) ON DELETE CASCADE,
             CounsellorID REFERENCES Counsellor(CounsellorID) ON DELETE CASCADE,
-            PRIMARY KEY(AppointmentID, StudentID, CounsellorID) 
+            PRIMARY KEY(AppointmentID) 
             )";
 
         if ($conn->query($sqlAppointmentCreate) === TRUE) {
@@ -20,9 +19,9 @@
 
     function AppointmentInsert() {
 
-        $sqlAppointmentInsert = "INSERT INTO Appointment VALUES(1, '2017-11-20', 102, 503)";
-        $sqlAppointmentInsert .= "INSERT INTO Appointment VALUES(2, '2017-12-15', 101, 502)";
-        $sqlAppointmentInsert .= "INSERT INTO Appointment VALUES(3, '2017-12-29', 103, 501)";
+        $sqlAppointmentInsert = "INSERT INTO Appointment VALUES(1, '2017-11-20', 503)";
+        $sqlAppointmentInsert .= "INSERT INTO Appointment VALUES(2, '2017-12-15', 502)";
+        $sqlAppointmentInsert .= "INSERT INTO Appointment VALUES(3, '2017-12-29', 501)";
         
         if ($conn->multi_query($sqlAppointmentInsert) === TRUE) {
             echo "New records created successfully";
@@ -54,7 +53,7 @@
 
         $sqlAppointmentDelete = "DELETE FROM Appointment WHERE AppointmentID = 2";
         
-        if ($conn->query(sqlAppointmentDelete) === TRUE) {
+        if ($conn->query($sqlAppointmentDelete) === TRUE) {
             echo "Record deleted successfully";
         } else {
             echo "Error deleting record: " . $conn->error;

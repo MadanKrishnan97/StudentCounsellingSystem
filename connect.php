@@ -19,8 +19,10 @@
         echo "Error creating database: " . $conn->error;
     }
 
-    include 'Student_crud.php';
     include 'Counsellor_crud.php';
+    include 'Student_crud.php';
+    include 'Appointment_crud.php';
+    include 'Payment_crud.php';
     
     $conn->close();
     
