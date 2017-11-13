@@ -28,7 +28,7 @@
         if ($conn->multi_query($sqlPaymentInsert) === TRUE) {
             echo "New records created successfully";
         } else {
-            echo "Error: " . $sqlCounsellorInsert . "<br>" . $conn->error;
+            echo "Error: " . $sqlPaymentInsert . "<br>" . $conn->error;
         }
 
     }
